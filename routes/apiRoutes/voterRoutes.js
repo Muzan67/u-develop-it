@@ -38,7 +38,6 @@ router.get('/voters', (req, res) => {
   
   // Create a voter
   router.post('/voter', ({ body }, res) => {
-    // Data validation
     const errors = inputCheck(body, 'first_name', 'last_name', 'email');
     if (errors) {
       res.status(400).json({ error: errors });
@@ -62,7 +61,6 @@ router.get('/voters', (req, res) => {
   
   // Update a voter's email
   router.put('/voter/:id', (req, res) => {
-    // Data validation
     const errors = inputCheck(req.body, 'email');
     if (errors) {
       res.status(400).json({ error: errors });
