@@ -3,11 +3,6 @@ const router = express.Router();
 
 router.use(require('./candidateRoutes'));
 router.use(require('./partyRoutes'));
-
-// Add near the top of the file
-const apiRoutes = require('./routes/apiRoutes');
-
-// Add after Express middleware
-app.use('/api', apiRoutes);
+router.use(require('./voterRoutes'));
 
 module.exports = router;
